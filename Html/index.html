@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles/styles.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;1,100;1,200;1,400;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <div class="body-container">
+        <div class="todo-container">
+            <h2>To do List</h2>
+            <div class="options">
+                <button id="all-btn">all</button>
+                <button id="active-btn">active</button>
+                <button id="completed-btn">completed</button>
+                <button id="clear-btn">clear completed</button>
+            </div>
+            <form id="my-form">
+                <input type="text" id="input" name="task" placeholder="Enter Your Task" />
+                <button class="submit" type="submit" id="submit-btn">Add Item</button>
+            </form>
+            <div class="tasks" id="task-container">
+        
+            </div>
+            <script type="module" src="../Js/index.js"></script>
+        </div>
+    </div>
+</body>
+</html>
