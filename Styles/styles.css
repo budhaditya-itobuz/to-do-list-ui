@@ -6,12 +6,12 @@
   color: white;
 }
 
-.hover {
-  transform: scale(1.1);
-}
-
 .body-container {
   margin: 20px;
+}
+
+.update {
+  margin: 10px;
 }
 
 .todo-container {
@@ -24,7 +24,8 @@
   border-radius: 30px;
 }
 .todo-container h2 {
-  margin: 20px;
+  margin-top: 30px;
+  margin-bottom: 0px;
   font-size: 30px;
 }
 .todo-container input {
@@ -40,7 +41,7 @@
   outline: none;
 }
 .todo-container form {
-  width: 80%;
+  width: 90%;
   padding: 0 40px;
   display: flex;
   flex-direction: column;
@@ -56,7 +57,7 @@
 }
 
 .options {
-  width: 80%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -72,7 +73,7 @@
 }
 
 .tasks {
-  width: 80%;
+  width: 90%;
   margin: 0 40px;
   padding: 40px;
 }
@@ -91,7 +92,8 @@ img {
   align-items: center;
   justify-content: space-between;
 }
-.task img:nth-child(1), .task .complete {
+.task img:nth-child(1),
+.task .complete {
   padding: 4px;
   background-color: #30363E;
   border-radius: 50%;
@@ -106,7 +108,7 @@ img {
   text-wrap: nowrap;
   overflow-y: scroll;
   margin-left: 10px;
-  width: 80%;
+  width: 90%;
 }
 .task h4::-webkit-scrollbar {
   display: none;

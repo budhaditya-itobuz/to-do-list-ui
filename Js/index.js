@@ -6,15 +6,13 @@ const all = document.getElementById('all-btn')
 const completed = document.getElementById('completed-btn')
 const active = document.getElementById('active-btn')
 const clear = document.getElementById('clear-btn')
-const submit =document.getElementById('submit-btn')
+const submit = document.getElementById('submit-btn')
 
-if (!getData('todo'))
-    setData('todo', [])
+if (!getData('todo')) setData('todo', [])
 
-if (!getData('state'))
-    setData('state', 'all')
+if (!getData('state')) setData('state', 'all')
 
-setData('update',null)
+setData('update', null)
 
 const addTask = (e) => {
     e.preventDefault();
@@ -22,8 +20,7 @@ const addTask = (e) => {
     const taskData = Object.fromEntries(formData.entries());
 
     let mytask = formater(taskData.task)
-    if (mytask === "")
-    {
+    if (mytask === "") {
         alert("your text is empty")
         return
     }
@@ -38,20 +35,14 @@ const addTask = (e) => {
 }
 
 const removeTask = (id) => {
-    if(getData('update')===parseInt(id))
-    {
+    if (getData('update') === parseInt(id)) {
         alert("Current item is in update . Cannot delete it")
-        setData('update',null)
-        submit.innerText="update"
-
-        console.log(submit.innerText)
+        setData('update', null)
+        submit.innerText = "update"
     }
-    else{
-        console.log(id)
+    else {
         let tasks = getData('todo')
-        tasks = tasks.filter((item) => {
-            return item.id != id
-        })
+        tasks = tasks.filter((item) => item.id != id)
         setData('todo', tasks)
     }
 }
@@ -69,39 +60,37 @@ const completeTask = (id) => {
     setData('todo', tasks)
 }
 
-const updateInitial=(id)=>{
-    if(getData('update')===parseInt(id))
-    alert("Current item is already in update ")
-    else{
+const updateInitial = (id) => {
+    if (getData('update') === parseInt(id))
+        alert("Current item is already in update ")
+    else {
         const tasks = getData('todo')
-        let mytask=tasks.filter((item)=> item.id === parseInt(id))[0]
-        setData('update',mytask.id)
-        input.value=mytask.task
-        submit.innerText="update"
+        let mytask = tasks.filter((item) => item.id === parseInt(id))[0]
+        setData('update', mytask.id)
+        input.value = mytask.task
+        submit.innerText = "update"
     }
 }
 
-const updateFinal=()=>{
-    const id=getData('update')
+const updateFinal = () => {
+    const id = getData('update')
     let tasks = getData('todo')
     if (tasks.filter(e => e.task === input.value).length > 0) {
         alert('Task already exists')
     }
-    else if(input.value.trim()==="")
-    {
+    else if (input.value.trim() === "") {
         alert("Your text is empty")
     }
-    else{
-        tasks.map((item,index)=>{
-            if( parseInt(item.id)  === parseInt(id))
-            {
-                tasks[index].task=input.value
+    else {
+        tasks.map((item, index) => {
+            if (parseInt(item.id) === parseInt(id)) {
+                tasks[index].task = input.value
             }
         })
-        setData('todo',tasks)
-        setData('update',null)  
+        setData('todo', tasks)
+        setData('update', null)
     }
-      
+
 }
 
 const render = () => {
@@ -110,13 +99,10 @@ const render = () => {
     container.innerHTML = ""
     input.value = ""
 
-    if (state === 'completed') 
-    tasks = getData('todo').filter((item) => item.status === 'completed')
+    if (state === 'completed')
+        tasks = getData('todo').filter((item) => item.status === 'completed')
     else if (state === 'active')
         tasks = getData('todo').filter((item) => item.status === 'pending')
-        active.classList.add('hover')
-
-    
 
     tasks.map((item) => {
         const remove = document.createElement('img')
@@ -149,7 +135,6 @@ const render = () => {
         else {
             h4.innerHTML = item.task
             complete.dataset.id = item.id
-
         }
 
         tasks.appendChild(complete)
@@ -207,14 +192,12 @@ clear.addEventListener('click', () => {
 
 const form = document.getElementById('my-form')
 form.addEventListener('submit', (e) => {
-        if(!getData('update'))
-        {
-            addTask(e)
-            render()
-        }
-        else{
-            console.log('hello')
-            updateFinal()
-            render()
-        }
+    if (!getData('update')) {
+        addTask(e)
+        render()
+    }
+    else {
+        updateFinal()
+        render()
+    }
 })
