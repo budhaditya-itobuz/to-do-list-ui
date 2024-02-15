@@ -14,6 +14,7 @@
     margin:10px;
 }
 
+
 .todo-container {
     margin: 50px auto;
     max-width: 600px;
@@ -56,7 +57,7 @@
             border: none;
             border-radius: 10px;
             background-color: green;
-            margin: 10px;
+            margin: 20px;
             width: 100%;
         }
     }
@@ -83,6 +84,12 @@
     width: 90%;
     margin: 0 40px;
     padding: 40px;
+    max-height: 400px;
+    overflow-y: scroll;
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
 }
 
 img {
