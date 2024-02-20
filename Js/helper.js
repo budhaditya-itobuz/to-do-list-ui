@@ -4,7 +4,6 @@ export const setData = (str, data) => localStorage.setItem(str, JSON.stringify(d
 
 export let formater = (str) => {
     let arr = str.split(" ")
-    console.log(arr)
     arr = arr.filter((item) => {
         return item != ""
     })
