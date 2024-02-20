@@ -106,12 +106,12 @@ const render = () => {
 
     tasks.map((item) => {
         const remove = document.createElement('img')
-        remove.setAttribute('src', "../images/trash-solid.svg")
+        remove.setAttribute('src', "./images/trash-solid.svg")
         remove.setAttribute('class', 'remove')
         remove.dataset.id = item.id
 
         const update = document.createElement('img')
-        update.setAttribute('src', "../images/pen-to-square-regular.svg")
+        update.setAttribute('src', "./images/pen-to-square-regular.svg")
         update.setAttribute('class', 'update')
         update.dataset.id = item.id
 
@@ -127,7 +127,7 @@ const render = () => {
             tasks.classList.add('change')
             h4.innerHTML = item.task.strike()
             complete = document.createElement('img')
-            complete.setAttribute('src', "../images/check-solid.svg")
+            complete.setAttribute('src', "./images/check-solid.svg")
             complete.setAttribute('class', 'complete')
             complete.dataset.id = item.id
 
