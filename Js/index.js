@@ -82,7 +82,7 @@ const updateFinal = () => {
         alert("Your text is empty")
     }
     else {
-        tasks.map((item, index) => {
+        tasks.forEach((item, index) => {
             if (parseInt(item.id) === parseInt(id)) {
                 tasks[index].task = input.value
             }
@@ -104,7 +104,7 @@ const render = () => {
     else if (state === 'active')
         tasks = getData('todo').filter((item) => item.status === 'pending')
 
-    tasks.map((item) => {
+    tasks.forEach((item) => {
         const remove = document.createElement('img')
         remove.setAttribute('src', "./images/trash-solid.svg")
         remove.setAttribute('class', 'remove')
